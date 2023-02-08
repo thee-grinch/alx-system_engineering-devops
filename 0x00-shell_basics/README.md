@@ -1,1 +1,1 @@
-this script shows the current working directory
+shell basics

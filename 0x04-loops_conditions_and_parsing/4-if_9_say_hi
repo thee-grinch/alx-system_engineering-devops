@@ -2,9 +2,9 @@
 #this makes the shell portable
 
 counter=0
-while [ $counter -lt 10 ]
+while [ $counter -lt 11 ]
 do
-	if [ $counter -eq 8 ]; then
+	if [ $counter -eq 9 ]; then
 		echo "Hi"
 	else
 		echo "Best School"

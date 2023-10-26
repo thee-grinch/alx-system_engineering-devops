@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #this line makes the shell script excecutable
 
-counter=1
-until [ $counter -gt 10 ]
+counter=0
+until [ $counter -eq 10 ]
 do
 	echo "Best School"
 	counter=$(($counter+1))

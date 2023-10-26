@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#makes the script more portable
+
+hr=0
+min=1
+while [ $hr -le 12 ]
+do
+	echo "hour: $hr"
+	while [ $min -le 59 ]
+	do
+		echo "$min"
+		min=$((min+1))
+	done
+	min=$((1))
+	hr=$((hr+1))
+done

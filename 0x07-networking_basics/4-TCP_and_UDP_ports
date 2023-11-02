@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+#shows listening sockets
+
+netstat -l

@@ -2,7 +2,8 @@
 #pings an ip address 5 times
 
 nums=$#
-if [ nums != 2 ];then
+if [ $nums != 2 ];then
 	echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
 else
-	ping -c 5 $2
+	ping -c 5 "$1"
+fi

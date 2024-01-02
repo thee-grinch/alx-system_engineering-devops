@@ -1,3 +1,3 @@
 #!/bin/env bash
 #sets a key-gen pair
-ssh-keygen -t rsa -b 4096 -f ~/.ssh/school -N "betty"
+ssh-keygen -b 4096 -f school -N betty

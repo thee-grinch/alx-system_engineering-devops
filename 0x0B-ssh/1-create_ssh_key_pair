@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/env bash
 #sets a key-gen pair
 passphrase="betty"
 

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#this script used to connect
 
 server="54.88.227.197"
 

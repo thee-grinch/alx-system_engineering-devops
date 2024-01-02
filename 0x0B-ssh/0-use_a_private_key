@@ -1,7 +1,3 @@
 #!/usr/bin/env bash
 #this script used to connect
-
-server="54.88.227.197"
-
-private_key="~/.ssh/school"
-ssh -i "$private_key" ubuntu@"$server"
+ssh -i  ~/.ssh/school ubuntu@54.88.227.197

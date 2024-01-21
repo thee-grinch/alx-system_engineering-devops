@@ -1,0 +1,23 @@
+Title: A Behind-the-Scenes Look at the Journey of a URL: Demystifying the Web Check out Google's website.
+
+First of all,
+When you open your browser and type https://www.google.com, you start a journey through the complex network of technologies and internet protocols that allow the web page to appear on your screen. We'll delve into the inner workings of modern web architecture in this blog post by examining everything from the first DNS request to the complex server and security protocol operations.
+
+DNS Request: A Domain Name System (DNS) request is made to start the journey. Though IP addresses are used by computers to communicate, the domain name https://www.google.com is readable by humans. Your browser can find the server hosting the Google website by using the DNS system to convert the domain name into an IP address.
+
+TCP/IP: The browser creates a connection using the Transmission Control Protocol (TCP) and the Internet Protocol (IP) after obtaining the IP address. By dividing data into packets and overseeing its successful delivery to the target IP address, TCP provides dependable data transmission.
+
+Firewall: Firewalls serve as security barriers between your computer and the web server, and they may be encountered by the connection during its establishment. A secure connection is ensured by firewalls, which filter out potentially hazardous data and guard against unwanted access.
+
+HTTPS/SSL: Ensuring the security of the data transferred between your web browser and the web server is essential in this age of cybersecurity worries. To protect sensitive information from possible eavesdroppers, the Hypertext Transfer Protocol Secure (HTTPS) encrypts the data using the Secure Sockets Layer (SSL) or Transport Layer Security (TLS) protocols.
+
+Load-Balancer: Websites such as Google frequently deal with large volumes of traffic, and in order to effectively spread this load, they need load balancers. Incoming requests are split up among several servers via load balancers, which keeps no single server from being overloaded. This guarantees dependability and peak performance.
+
+Web Server: The browser's request is processed by the web server once it reaches it. Images, HTML, and CSS are examples of static content handled by the web server. In the case of Google, numerous dispersed servers collaborate to provide consumers all over the world with a flawless experience.
+
+Application Server: Application servers manage dynamic material, such as tailored information or search results. These servers handle database queries, handle user requests, and produce the dynamic content that distinguishes every Google search.
+
+Database: In the background, databases store and retrieve the information required to produce dynamic content. Google's extensive database architecture guarantees rapid access to the data needed to deliver current and pertinent search results.
+
+Conclusion: A complicated interaction of servers, protocols, and technologies occurs between typing https://www.google.com and seeing search results on your screen. Every stage involved in providing a flawless online experience is vital, from DNS queries and TCP/IP connections to firewalls, HTTPS/SSL, load balancers, web servers, application servers, and databases. We have a deeper respect for the complex architecture supporting the modern internet as a result of comprehending this process.
+

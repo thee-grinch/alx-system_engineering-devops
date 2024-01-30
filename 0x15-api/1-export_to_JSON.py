@@ -2,7 +2,7 @@
 """
 this scripts fcetches and uses data from an api
 """
-import csv
+import json
 import requests
 
 
@@ -20,12 +20,15 @@ def print_tasks(user_id):
         user = user_response.json()
         username = user.get('username')
         list_tasks = [
-            [task.get('userId'), username, task.get('completed'),
-             task.get('title')] for task in tasks]
-        filename = '{}.csv'.format(user_id)
-        with open(filename, 'w') as file:
-            writer = csv.writer(file, quotechar='"', quoting=csv.QUOTE_ALL)
-            writer.writerows(list_tasks)
+            {"task": task.get('title'),
+             "completed": task.get('completed'), "username": username} for task in tasks]
+        filename = '{}.json'.format(user_id)
+        data_to_be_written = {"{}".format(user_id): list_tasks}
+        # print(data_to_be_written)
+        with open(filename, 'w') as jsonfile:
+            json.dump(data_to_be_written, jsonfile)
+        # for task in list_tasks:
+        #     print(task)
     except Exception as e:
         print('{}'.format(e))
 

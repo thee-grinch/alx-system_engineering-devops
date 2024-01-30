@@ -22,7 +22,8 @@ def print_tasks(user_id):
         list_tasks = [
             [task.get('userId'), username, task.get('completed'),
              task.get('title')] for task in tasks]
-        with open('USER_ID.csv', 'w') as file:
+        filename = '{}.csv'.format(user_id)
+        with open(filename, 'w') as file:
             writer = csv.writer(file, quotechar='"', quoting=csv.QUOTE_ALL)
             writer.writerows(list_tasks)
     except Exception as e:

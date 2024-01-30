@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-import requests
-
 """
 this scripts fcetches and uses data from an api
 """
+import requests
 
 
 def print_tasks(user_id):

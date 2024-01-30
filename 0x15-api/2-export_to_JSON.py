@@ -21,7 +21,8 @@ def print_tasks(user_id):
         username = user.get('username')
         list_tasks = [
             {"task": task.get('title'),
-             "completed": task.get('completed'), "username": username} for task in tasks]
+             "completed": task.get('completed'), "username": username}
+            for task in tasks]
         filename = '{}.json'.format(user_id)
         data_to_be_written = {"{}".format(user_id): list_tasks}
         # print(data_to_be_written)

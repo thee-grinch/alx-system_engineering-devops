@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+'''this module finds the total number of  subscribers in a subredit'''
 import requests
 
 def number_of_subscribers(subreddit):

@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-'''this module finds the total number of  subscribers in a subredit'''
+'''
+this module finds the total number of  subscribers in a subredit
+'''
 import requests
 
 

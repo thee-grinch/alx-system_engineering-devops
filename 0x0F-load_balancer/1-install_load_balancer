@@ -20,6 +20,6 @@ printf %s "
     balance roundrobin
     server 243213-web-01 54.88.227.197:80 check
     server 243213-web-02 34.207.83.201:80 check
-" | sudo tee /etc/haproxy/haproxy.cfg > dev/null
+" | sudo tee /etc/haproxy/haproxy.cfg > /dev/null
 
 sudo service haproxy start

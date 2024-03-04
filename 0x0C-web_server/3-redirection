@@ -9,14 +9,5 @@ mkdir /etc/nginx/html
 sudo touch /etc/nginx/html/index.html
 # echo "Hello Word!" > /etc/nginx/html/index.html
 echo "Hello Word!" | sudo tee /etc/nginx/html/index.html > /dev/null
-printf %s "server {
-    listen   80;
-    listen   [::]:80 default_server;
-    root     /etc/nginx/html;
-    index    index.html index.htm;
-    location /redirect_me {
-        return 301 http://www.google.com;
-    }
-    }" > /etc/nginx/sites-available/default
-
+sudo sed -i '/listen 80 default_server/a rewrite ^/redirect_me https://google.com/ permanent;' /etc/nginx/sites-available/default
 sudo service nginx restart

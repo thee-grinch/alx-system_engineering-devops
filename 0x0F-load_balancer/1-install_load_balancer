@@ -1,27 +1,25 @@
 #!/usr/bin/env bash
-# Install HAproxy and configure it to load balance between two web servers
-sudo apt-get update
-sudo apt-get install -y haproxy
+# Configures new Ubuntu machine to install and configure HAProxy
 
-# Configure HAproxy
-sudo sed -i 's/ENABLED=0/ENABLED=1/' /etc/default/haproxy
-sudo tee /etc/haproxy/haproxy.cfg > /dev/null <<EOT
-defaults
+sudo apt-get -y update
+sudo apt-get install --no-install-recommends software-properties-common -y
+sudo add-apt-repository ppa:vbernat/haproxy-2.0 -y
+sudo apt-get install haproxy=2.0.\* -y
+
+echo "ENABLED=1" | sudo tee /etc/default/haproxy > /dev/null
+sudo mv /etc/haproxy/haproxy.cfg{,.original}
+sudo touch /etc/haproxy/haproxy.cfg
+printf %s "
+  frontend haproxy
+      bind *:80
+      mode http
+      default_backend web_servers
+
+  backend web_servers
     mode http
-    timeout connect 5000ms
-    timeout client 50000ms
-    timeout server 50000ms
-
-frontend http-in
-    bind *:80
-    default_backend servers
-
-backend servers
     balance roundrobin
     server 243213-web-01 54.88.227.197:80 check
     server 243213-web-02 34.207.83.201:80 check
-EOT
+" | sudo tee /etc/haproxy/haproxy.cfg > dev/null
 
-# Enable and start HAproxy service
-sudo systemctl enable haproxy
-sudo systemctl start haproxy
+sudo service haproxy start
